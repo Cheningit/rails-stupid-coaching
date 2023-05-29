@@ -1,0 +1,18 @@
+<form action="ask" data-turbo="false">
+  <input type="text" name="question" value="<%= params[:question]%>">
+  <input type="submit" value="submit">
+</form>
+
+<% if params[:question] %>
+  <div>
+    <h6><%=@question%></h6>
+    <h6>- You</h6>
+  </div>
+
+  <div>
+    <h6><%=@answer%></h6>
+    <h6>- Your coach</h6>
+  </div>
+
+  <%= link_to "Ask a new question", ask_path %>
+<% end %>
